@@ -178,3 +178,14 @@ aside {
     color: $state-danger-text;
   }
 }
+
+.checkbox {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  span {
+    margin-left: 10px;
+    font-weight: normal;
+  }
+}
