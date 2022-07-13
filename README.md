@@ -1,24 +1,36 @@
-# README
+#  Ruby on Rals Tutorial Sample App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the sample application for the
+[Ruby on Rails Tutorial](https://www.railstutorial.org)
+by [Michael Hartl](https://www.michaelhartl.com/).
 
-Things you may want to cover:
+* Ruby version 3.1.2
+* Rails version 7.0.3.1
 
-* Ruby version
+## Getting started
 
-* System dependencies
+clone the repo and then install gems:
 
-* Configuration
+```shell
+gem install bundler
+bundle config set --local without 'production'
+bundle install
+```
 
-* Database creation
+migrate the database:
 
-* Database initialization
+```shell
+rails db:migrate
+```
 
-* How to run the test suite
+run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+rails test
+```
 
-* Deployment instructions
+if tests pass, run server
 
-* ...
+```shell
+rails server
+```
