@@ -1,0 +1,12 @@
+<% provide(:title, @user.name) %>
+
+<div>
+  <aside>
+    <section>
+      <h1 class="flex gap-2 items-center self-start text-3xl">
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>

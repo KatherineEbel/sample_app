@@ -8,7 +8,6 @@
         @apply hover:text-rose-500 transition-all duration-300;
     }
 
-
     .btn {
         @apply rounded-lg py-2.5 px-4 transition-all duration-300;
     }
@@ -20,5 +19,31 @@
 
 
 body {
-    @apply bg-zinc-900 text-zinc-100
+    @apply bg-zinc-900 text-zinc-100 relative;
+}
+
+form {
+    @apply flex flex-col gap-1 mx-auto;
+}
+
+form input[type=submit] {
+    @apply mt-2;
+}
+
+input {
+    @apply rounded-md border-none text-zinc-800;
+}
+
+.alert {
+    @apply rounded-md px-2 py-4 absolute right-8 self-start;
+}
+
+.alert-success {
+    @apply bg-green-200 text-green-800 font-medium;
+}
+
+.debug_dump {
+    position: absolute;
+    left: 20px;
+    bottom: 90px;
 }
