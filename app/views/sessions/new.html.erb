@@ -1,0 +1,13 @@
+<% provide(:title, "Log in") %>
+<div class="self-center mx-auto max-w-sm w-full">
+  <h1 class="font-bold text-4xl">Log in</h1>
+  <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+    <%= f.submit "Log in", class: "btn btn-primary" %>
+  <% end %>
+  <p>New user? <%= link_to "Sign up now!", signup_path, class: 'text-rose-700 font-medium' %></p>
+</div>

@@ -1,11 +1,13 @@
-<header class="flex items-center w-full p-2 bg-zinc-800 shadow-xl">
+<header class="app-header flex items-center w-full p-2 bg-zinc-800 shadow-xl">
   <%= link_to "sample app", root_path, id: "logo", class: 'text-2xl font-bold uppercase' %>
   <nav class="ml-auto flex gap-2 items-center">
     <%= link_to "Home", root_path, class: 'nav-link' %>
     <%= link_to "Help", help_path, class: 'nav-link' %>
-    <%= link_to "Log in", '#',
-                class: 'btn btn-primary'
-    %>
+    <% if logged_in? %>
+      <%= render 'shared/account_dropdown' %>
+    <% else %>
+      <%= link_to "Log in", login_path %>
+    <% end %>
   </nav>
 </header>
 

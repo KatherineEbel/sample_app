@@ -1,0 +1,11 @@
+<div class="dropdown">
+  <% link_to "users", '#' %>
+  <a class="dropdown-toggle" href="#">Account</a>
+  <ul class="dropdown-menu">
+    <li><%= link_to "Profile", current_user %></li>
+    <li><%= link_to "Settings", '#' %></li>
+    <li><%= button_to "Log out", logout_path, method: :delete %></li>
+  </ul>
+</div>
+<%= javascript_include_tag "dropdown" %>
+
