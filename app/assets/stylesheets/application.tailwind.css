@@ -46,6 +46,10 @@ form input[type=submit] {
     @apply bg-rose-200 text-rose-800 font-medium;
 }
 
+.checkbox {
+    @apply flex gap-2 items-center;
+}
+
 .debug_dump {
     position: absolute;
     left: 20px;
