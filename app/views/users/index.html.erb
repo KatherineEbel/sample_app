@@ -1,0 +1,9 @@
+<% provide(:title, 'All Users') %>
+<div class="flex flex-col">
+  <h1 class="text-2xl font-bold">All users</h1>
+  <%= will_paginate %>
+  <ul class="self-start grid grid-cols-1 md:grid-cols-3 gap-4">
+    <%= render @users %>
+  </ul>
+  <%= will_paginate %>
+</div>

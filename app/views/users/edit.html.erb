@@ -1,0 +1,9 @@
+<% provide(:title, 'Edit user') %>
+<div class="self-center mx-auto max-w-sm w-full">
+  <h1 class="font-bold text-4xl capitalize">Edit your account</h1>
+  <div class="flex items-center gap-2">
+    <%= gravatar_for @user %>
+    <a class="text-rose-200 font-medium" href="https://gravatar.com/emails" rel="noopener" target="_blank">change</a>
+  </div>
+  <%= render 'form' %>
+</div>

@@ -17,7 +17,6 @@
     }
 }
 
-
 body {
     @apply bg-zinc-900 text-zinc-100 relative;
 }
@@ -70,4 +69,24 @@ form input[type=submit] {
 
 .dropdown-menu.open {
     transform: scaleY(1);
+}
+
+/* Pagination */
+
+.pagination {
+    @apply border border-zinc-100 self-center rounded my-4;
+}
+
+.pagination em,
+.pagination a:not(:last-of-type) {
+    @apply inline-block border-r-[1px] border-zinc-100 px-2
+}
+
+
+.pagination .current {
+    @apply bg-rose-500
+}
+
+.pagination .disabled {
+    @apply text-zinc-400 cursor-not-allowed;
 }

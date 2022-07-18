@@ -1,7 +1,7 @@
 <% if @user.errors.any? %>
   <div class="bg-zinc-800 text-rose-300 font-medium p-2 rounded-md">
-    <div>
-      The form contains <%= pluralize(@user.errors.count, "error") %>.
+    <div class="error-count">
+      The form contains <%= pluralize(@user.errors.count, "error") %>
     </div>
     <ul>
       <% @user.errors.full_messages.each do |msg| %>

@@ -1,9 +1,9 @@
 <div class="dropdown">
   <% link_to "users", '#' %>
   <a class="dropdown-toggle" href="#">Account</a>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu z-10">
     <li><%= link_to "Profile", current_user %></li>
-    <li><%= link_to "Settings", '#' %></li>
+    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
     <li><%= button_to "Log out", logout_path, method: :delete %></li>
   </ul>
 </div>

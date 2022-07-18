@@ -11,5 +11,11 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     
     get signup_path
     assert_select "title", full_title("Sign up")
+    
+    user = users(:katherine)
+    login_as(user)
+    follow_redirect!
+    assert_select "a[href=?]", users_path
+    assert_select "a[href=?]", edit_user_path(user)
   end
 end
