@@ -29,6 +29,14 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+  
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+  
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
 
   class << self
     def digest(string)
