@@ -2,7 +2,7 @@ require "test_helper"
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
   def setup
-    @user = users(:katherine)
+    @admin_user = users(:katherine)
   end
   
   test "login flash" do
@@ -17,19 +17,19 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   
   test "login with valid information" do
     get login_path
-    login_as(@user)
-    assert_redirected_to @user
+    login_as(@admin_user)
+    assert_redirected_to @admin_user
     follow_redirect!
     assert_template "users/show"
     assert_select "a[href=?]", login_path, count: 0
     assert_select 'form[action=?]', logout_path
-    assert_select "a[href=?]", user_path(@user)
+    assert_select "a[href=?]", user_path(@admin_user)
   end
   
   test "login with valid email/invalid password" do
     get login_path
     assert_template "sessions/new"
-    login_as(@user, password: 'invalid')
+    login_as(@admin_user, password: 'invalid')
     
     assert_not is_logged_in?
     assert_template "sessions/new"
@@ -40,7 +40,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   
   test "login with valid information followed by logout" do
     get login_path
-    login_as(@user)
+    login_as(@admin_user)
     assert is_logged_in?
     delete logout_path
     assert_not is_logged_in?
@@ -50,19 +50,19 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_select "a[href=?]", login_path
     assert_select "a[href=?]", logout_path, count: 0
-    assert_select "a[href=?]", user_path(@user), count: 0
+    assert_select "a[href=?]", user_path(@admin_user), count: 0
   end
   
   test "login with remembering" do
-    login_as(@user, remember_me: '1')
+    login_as(@admin_user, remember_me: '1')
     assert_equal cookies[:remember_token], assigns(:user).remember_token
   end
   
   test "login without remembering" do
     # log in to set the cookie
-    login_as(@user, remember_me: '1')
+    login_as(@admin_user, remember_me: '1')
     # log in again and verify that the cookie is deleted
-    login_as(@user, remember_me: '0')
+    login_as(@admin_user, remember_me: '0')
     assert cookies[:remember_token].blank?
   end
 end

@@ -49,6 +49,10 @@ form input[type=submit] {
     @apply flex gap-2 items-center;
 }
 
+.danger {
+    @apply text-rose-500;
+}
+
 .debug_dump {
     position: absolute;
     left: 20px;
