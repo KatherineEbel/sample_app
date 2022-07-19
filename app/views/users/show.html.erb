@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 
-<div>
+<div class="flex flex-col md:flex-row gap-4">
   <aside>
     <section>
       <h1 class="flex gap-2 items-center self-start text-3xl">
@@ -9,4 +9,13 @@
       </h1>
     </section>
   </aside>
+  <% if @user.microposts.any? %>
+    <section>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol>
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    </section>
+  <% end %>
 </div>
