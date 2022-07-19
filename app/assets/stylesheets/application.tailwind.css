@@ -34,20 +34,25 @@ form input[type=submit] {
 }
 
 .alert {
-    @apply rounded-md px-2 py-4 absolute right-8 self-start;
+    @apply rounded-md px-2 py-4 absolute right-8 self-start font-medium;
+}
+
+.alert-info {
+    @apply bg-sky-200 text-sky-800;
 }
 
 .alert-success {
-    @apply bg-green-200 text-green-800 font-medium;
+    @apply bg-green-200 text-green-800;
 }
 
 .alert-danger {
-    @apply bg-rose-200 text-rose-800 font-medium;
+    @apply bg-rose-200 text-rose-800;
 }
 
 .checkbox {
     @apply flex gap-2 items-center;
 }
+
 
 .danger {
     @apply text-rose-500;

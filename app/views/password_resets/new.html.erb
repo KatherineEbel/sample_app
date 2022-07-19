@@ -1,0 +1,12 @@
+<% provide(:title, "Forgot password") %>
+<div class="flex flex-col gap-4 mx-auto pt-8">
+  <h1 class="font-bold text-4xl">Forgot password</h1>
+  <%= form_with(url: password_resets_path, scope: :password_reset) do |f| %>
+    <%= f.label :email, class: 'flex gap-4 items-center' do %>
+      <span class="text-lg font-medium">Email</span>
+      <%= f.email_field :email, class: "form-control" %>
+    <% end %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<!--http://localhost:3000/password_resets/yd25JLcuw0HJNMXk5Hn9VA/edit?email=example-4%40railstutorial.org-->
