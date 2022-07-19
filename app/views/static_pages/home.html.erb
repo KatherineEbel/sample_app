@@ -1,12 +1,5 @@
-<!doctype html>
-<html lang="en">
-<div class="text-center mx-auto">
-  <h1 class="font-bold text-4xl my-4">Welcome to the Sample App</h1>
-  <h2 class="text-2xl my-2">
-    This is the home page for the
-    <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-  </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: 'inline-block hover:bg-red-600 transition-all duration-300 py-3.5 px-2 bg-[#CC0000] rounded-lg font-medium uppercase my-4' %>
-  <%= link_to image_tag("rails.svg", alt: "Rails logo" ), "https://rubyonrails.org" %>
-</div>
+<% if logged_in? %>
+  <%= render 'shared/user_home' %>
+<% else %>
+  <%= render 'shared/landing' %>
+<% end %>

@@ -2,7 +2,7 @@
 <div class="flex flex-col gap-4 mx-auto pt-8">
   <h1 class="font-bold text-4xl">Reset password</h1>
   <%= form_with(model: @user, url: password_reset_path(params[:id])) do |f| %>
-    <%= render 'shared/error_messages' %>
+    <%= render 'shared/error_messages', object: f.object %>
     <%= hidden_field_tag :email, @user.email %>
     <%= f.label :password, class: 'flex gap-4 items-center' do %>
       <span class="text-lg font-medium">Password</span>
