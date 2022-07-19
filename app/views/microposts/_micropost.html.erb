@@ -1,10 +1,17 @@
 <li class="flex items-center gap-2 border-b-[1px] border-zinc-300 py-2" id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <div class="flex flex-col gap-2">
-    <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-    <span class="content"><%= micropost.content %></span>
-    <span class="text-xs text-zinc-500">
-    Posted <%= time_ago_in_words(micropost.created_at) %>
-  </span>
+    <p class="user"><%= link_to micropost.user.name, micropost.user %></p>
+    <p class="content"><%= micropost.content %></p>
+    <div class="flex items-center gap-2">
+      <p class="text-xs text-zinc-500">
+        Posted <%= time_ago_in_words(micropost.created_at) %>
+      </p>
+      <% if current_user?(micropost.user) %>
+        <%= button_to micropost, method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } } do %>
+          <span class="material-icons material-icons-outlined danger">delete</span>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </li>
