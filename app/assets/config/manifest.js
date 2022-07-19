@@ -3,4 +3,4 @@
 //= link_tree ../builds
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
-//= link dropdown.js
+//= link_tree ../javascripts .js

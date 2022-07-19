@@ -1,5 +1,3 @@
-const header = document.querySelector('.app-header')
-// let dropdownToggle, dropdownMenu
 let dropdownMenu
 
 const dropdownToggle = document.querySelector('.dropdown-toggle')

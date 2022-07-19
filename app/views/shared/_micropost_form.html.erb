@@ -4,5 +4,8 @@
     <%= f.text_area :content, placeholder: "Compose new micropost...",
                     class: "rounded-md text-zinc-800" %>
   </div>
+  <span>
+    <%= f.file_field :image %>
+  </span>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

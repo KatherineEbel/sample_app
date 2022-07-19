@@ -5,6 +5,8 @@ ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
+gem "active_storage_validations"
+gem "image_processing"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -37,7 +39,7 @@ gem "jbuilder"
 gem "bcrypt", "~> 3.1.13"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data"
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -75,4 +77,5 @@ end
 
 group :production do
   gem "pg"
+  gem "aws-sdk-s3", "1.114.0", require: false
 end
