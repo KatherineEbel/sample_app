@@ -50,7 +50,7 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem "faker", "2.11.0"
+gem "faker", "2.21.0"
 gem "will_paginate", "3.3.0"
 
 group :development, :test do
